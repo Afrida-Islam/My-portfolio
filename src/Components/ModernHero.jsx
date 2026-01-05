@@ -7,148 +7,204 @@ import {
   FiGithub,
   FiMail,
 } from "react-icons/fi";
-import { SiJavascript, SiHtml5, SiReact, SiCss3 } from "react-icons/si";
+import {
+  SiJavascript,
+  SiHtml5,
+  SiReact,
+  SiCss3,
+  SiTailwindcss,
+  SiNodedotjs,
+} from "react-icons/si";
 
 const ModernHero = () => {
+  const handleDownload = () => {
+    window.open("/resume.pdf", "_blank"); // ফাইল থাকলে ডাউনলোড হবে
+  };
+
   const skillIcons = [
     {
       Icon: SiJavascript,
-      color: "text-green-400",
-      border: "border-green-400",
-      shadow: "shadow-green-500/50",
+      color: "text-yellow-400",
+      border: "border-yellow-400/50",
     },
+    { Icon: SiReact, color: "text-cyan-400", border: "border-cyan-400/50" },
+    { Icon: SiTailwindcss, color: "text-sky-400", border: "border-sky-400/50" },
     {
-      Icon: SiHtml5,
-      color: "text-orange-500",
-      border: "border-orange-500",
-      shadow: "shadow-orange-500/50",
-    },
-    {
-      Icon: SiReact,
-      color: "text-cyan-400",
-      border: "border-cyan-400",
-      shadow: "shadow-cyan-500/50",
-    },
-    {
-      Icon: SiCss3,
-      color: "text-blue-500",
-      border: "border-blue-500",
-      shadow: "shadow-blue-500/50",
+      Icon: SiNodedotjs,
+      color: "text-green-500",
+      border: "border-green-500/50",
     },
   ];
 
   return (
-    <section className="relative min-h-screen bg-[#05010d] flex items-center justify-center px-8 lg:px-24 overflow-hidden">
-      {/* Background Ambient Glows */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/20 blur-[120px] rounded-full" />
+    <section
+      id="home"
+      className="relative min-h-screen bg-[#05010d] flex items-center justify-center px-6 py-20 lg:px-24 overflow-hidden"
+    >
+      {/* --- Background Elements --- */}
+      <div className="absolute top-[-10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/10 blur-[120px] rounded-full animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full animate-pulse" />
 
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
-        {/* LEFT CONTENT: Text & CTA */}
+      {/* Floating Particles */}
+      {[...Array(6)].map((_, i) => (
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          key={i}
+          className="absolute w-2 h-2 bg-purple-500/30 rounded-full hidden md:block"
+          animate={{
+            y: [0, -100, 0],
+            x: [0, Math.random() * 50, 0],
+            opacity: [0, 1, 0],
+          }}
+          transition={{
+            duration: Math.random() * 5 + 5,
+            repeat: Infinity,
+            delay: i * 2,
+          }}
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+          }}
+        />
+      ))}
+
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center z-10">
+        {/* --- LEFT CONTENT --- */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-center lg:text-left order-2 lg:order-1"
         >
-          <motion.h1
-            className="text-white text-6xl md:text-8xl font-extrabold mb-4 tracking-tight"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="inline-block px-4 py-1.5 mb-6 border border-purple-500/30 rounded-full bg-purple-500/5 text-purple-400 text-sm font-medium tracking-wider"
           >
-            Hi, I’m <span className="text-white">Ritu</span>
-          </motion.h1>
+            🚀 WELCOME TO MY UNIVERSE
+          </motion.div>
 
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 bg-clip-text text-transparent mb-6"
-            animate={{ backgroundPosition: ["0%", "100%", "0%"] }}
-            transition={{ duration: 10, repeat: Infinity }}
-          >
-            Full stack developer
-          </motion.h2>
+          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 tracking-tight leading-[1.1]">
+            Hi, I’m <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-pink-400 drop-shadow-sm">
+              Afrida Ritu
+            </span>
+          </h1>
 
-          <p className="text-gray-400 text-lg md:text-xl max-w-lg mb-10 leading-relaxed font-light">
-            Crafting modern, responsive, and user-friendly websites with passion
-            and precision.
+          <div className="h-12 mb-8">
+            <motion.p
+              className="text-xl md:text-3xl font-medium text-gray-300"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              I build{" "}
+              <span className="text-white border-b-2 border-purple-500">
+                scalable web apps
+              </span>
+            </motion.p>
+          </div>
+
+          <p className="text-gray-400 text-base md:text-lg max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed">
+            Specializing in building exceptional digital experiences. Currently
+            focused on creating clean, accessible, and user-centric
+            applications.
           </p>
 
-          <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
             <motion.button
+              onClick={handleDownload}
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0 0 25px rgba(168, 85, 247, 0.5)",
+                boxShadow: "0 0 30px rgba(168, 85, 247, 0.4)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl"
+              className="group relative flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-bold text-lg transition-all"
             >
-              Download Resume <FiDownload className="text-xl" />
+              Get Resume{" "}
+              <FiDownload className="group-hover:translate-y-1 transition-transform" />
             </motion.button>
 
-            <div className="flex gap-5">
-              {[FiTwitter, FiLinkedin, FiGithub, FiMail].map((Icon, i) => (
+            <div className="flex gap-4">
+              {[
+                { Icon: FiGithub, link: "#" },
+                { Icon: FiLinkedin, link: "#" },
+                { Icon: FiTwitter, link: "#" },
+                { Icon: FiMail, link: "#" },
+              ].map((item, i) => (
                 <motion.a
                   key={i}
-                  href="#"
-                  whileHover={{ y: -5, color: "#d946ef" }}
-                  className="text-gray-500 text-2xl transition-all p-2 rounded-full border border-gray-800 hover:border-purple-500/50 bg-gray-900/50"
+                  href={item.link}
+                  whileHover={{
+                    y: -5,
+                    scale: 1.1,
+                    backgroundColor: "rgba(168, 85, 247, 0.1)",
+                  }}
+                  className="text-gray-400 hover:text-purple-400 text-2xl p-3 rounded-2xl border border-gray-800 bg-[#0d021f] transition-all"
                 >
-                  <Icon />
+                  <item.Icon />
                 </motion.a>
               ))}
             </div>
           </div>
         </motion.div>
 
-        {/* RIGHT CONTENT: Orbiting Skill Ring */}
-        <div className="relative flex items-center justify-center">
-          {/* Neon Ring */}
+        {/* --- RIGHT CONTENT (Fixed Orbit) --- */}
+        <div className="relative flex items-center justify-center order-1 lg:order-2 mb-12 lg:mb-0">
+          {/* Orbiting Skills */}
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="relative w-80 h-80 md:w-[500px] md:h-[500px] border-2 border-dashed border-purple-500/30 rounded-full flex items-center justify-center"
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="relative w-72 h-72 md:w-[450px] md:h-[450px] flex items-center justify-center"
           >
+            {/* Invisible Circle Track */}
+            <div className="absolute inset-0 border border-purple-500/10 rounded-full" />
+
             {skillIcons.map((skill, i) => {
               const angle = (i * 360) / skillIcons.length;
               return (
                 <motion.div
                   key={i}
-                  className={`absolute w-14 h-14 md:w-20 md:h-20 bg-[#0d021f] border-2 ${skill.border} rounded-full flex items-center justify-center text-3xl md:text-4xl ${skill.color} shadow-[0_0_20px_rgba(0,0,0,0.8)] backdrop-blur-md`}
+                  className={`absolute w-14 h-14 md:w-20 md:h-20 bg-[#0d021f]/80 border ${skill.border} rounded-2xl flex items-center justify-center text-2xl md:text-4xl ${skill.color} shadow-2xl backdrop-blur-xl z-30`}
                   style={{
-                    top: `${50 + 50 * Math.sin((angle * Math.PI) / 180)}%`,
-                    left: `${50 + 50 * Math.cos((angle * Math.PI) / 180)}%`,
-                    transform: "translate(-50%, -50%)",
-                  }}
-                  animate={{ rotate: -360 }} // Counter-rotate to keep icons upright
-                  transition={{
-                    duration: 30,
-                    repeat: Infinity,
-                    ease: "linear",
+                    left: "50%",
+                    top: "50%",
+                    transform: `rotate(${angle}deg) translate(clamp(140px, 18vw, 220px)) rotate(-${angle}deg) translate(-50%, -50%)`,
                   }}
                 >
-                  <skill.Icon className={`drop-shadow-lg`} />
+                  <motion.div
+                    animate={{ rotate: -360 }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    <skill.Icon className="drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
+                  </motion.div>
                 </motion.div>
               );
             })}
           </motion.div>
 
-          {/* Profile Image with Glow Overlay */}
+          {/* Profile Image Wrapper */}
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="absolute w-64 h-64 md:w-[380px] md:h-[380px] rounded-full p-2 z-20"
+            transition={{ duration: 1, type: "spring" }}
+            className="absolute w-52 h-52 md:w-[300px] md:h-[300px] z-20"
           >
-            <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-purple-500/20">
+            <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-[#1a0b2e] shadow-2xl">
               <img
                 src="https://i.ibb.co.com/PZS5sNhL/img1.jpg"
-                alt="Meriem"
-                className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+                alt="Profile"
+                className="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
               />
-              {/* Purple/Blue Gradient Overlay like the reference */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-purple-900/40" />
             </div>
 
-            {/* Outer Glow Pulse */}
-            <div className="absolute inset-0 bg-purple-500/30 blur-3xl rounded-full -z-10 animate-pulse" />
+            {/* Outer Glow Circles */}
+            <div className="absolute inset-[-20px] border border-purple-500/10 rounded-full -z-10 animate-[ping_3s_linear_infinite]" />
+            <div className="absolute inset-0 bg-purple-600/20 blur-[60px] rounded-full -z-10" />
           </motion.div>
         </div>
       </div>
