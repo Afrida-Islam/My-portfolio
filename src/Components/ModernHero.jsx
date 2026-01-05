@@ -139,7 +139,7 @@ const ModernHero = () => {
           >
             <div className="relative w-full h-full rounded-full overflow-hidden border-[6px] border-purple-500/20">
               <img
-                src="https://i.ibb.co.com/PZS5sNhL/img1.jpg" // Replace with your image
+                src="https://i.ibb.co.com/PZS5sNhL/img1.jpg"
                 alt="Meriem"
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
               />
