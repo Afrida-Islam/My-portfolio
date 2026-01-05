@@ -10,7 +10,7 @@ const Projects = () => {
         "A feature-rich e-commerce dashboard allowing users to manage electronics, carts, and wishlists with persistent storage.",
       tags: ["React", "Tailwind", "Lucide React", "Local Storage"],
       link: "https://assignment010.vercel.app/",
-      github: "https://github.com/Afrida-Islam/Assignment008",
+      github: "https://github.com/Afrida-Islam/Assignment010",
       image: "https://i.ibb.co.com/Z6f2SzS6/image3.jpg",
     },
     {
@@ -19,8 +19,7 @@ const Projects = () => {
         "A secure authentication-based support platform with real-time feedback and user management features.",
       tags: ["React", "Firebase Auth", "Tailwind", "Animate.css"],
       link: "https://assignment011-dkra.vercel.app/",
-      github:
-        "https://github.com/programming-hero-web-course-4/b12a7-customer-support-zone-Afrida-Islam",
+      github: "https://github.com/Afrida-Islam/Assignment011",
       image: "https://i.ibb.co.com/HTYzD46s/image1.jpg",
     },
     {
@@ -29,7 +28,7 @@ const Projects = () => {
         "A full-stack (MERN) hotel management system featuring dynamic room availability and booking cancellations.",
       tags: ["MongoDB", "Express", "React", "Node.js"],
       link: "https://assignment012-kdhw.vercel.app/",
-      github: "https://github.com/Afrida-Islam/Assignment011",
+      github: "https://github.com/Afrida-Islam/Assignment012",
       image: "https://i.ibb.co.com/HL3ZxK8b/image2.jpg",
     },
   ];
